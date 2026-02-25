@@ -13,8 +13,6 @@ export default asyncHandler(async (request: Request, _response: Response, next: 
 
         const { cookies } = req
 
-        console.log('Access Token: ', cookies as String);
-
         const { accessToken } = cookies as {
             accessToken: string | undefined
         }
