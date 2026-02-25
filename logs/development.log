@@ -13305,3 +13305,91 @@
         }
     }
 }
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:13:58.756Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "BaseServer/"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:13:58.759Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:13:58.759Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:14:38.605Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:14:38.608Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:14:38.609Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:16:27.376Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "BaseServer"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:16:27.380Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:16:27.380Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:17:34.515Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "BaseServer1"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:17:34.518Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2026-02-25T18:17:34.518Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
