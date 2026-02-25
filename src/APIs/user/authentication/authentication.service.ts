@@ -24,7 +24,8 @@ export const registrationService = async (payload: IRegisterRequest) => {
     const { name, phoneNumber, email, password } = payload
 
     // Parsing and validating phone number
-    const { countryCode, internationalNumber, isoCode } = parsers.parsePhoneNumber('+' + phoneNumber)
+    const formattedNumber = phoneNumber.startsWith('+') ? phoneNumber : '+' + phoneNumber;
+    const { countryCode, internationalNumber, isoCode } = parsers.parsePhoneNumber(formattedNumber)
     if (!countryCode || !internationalNumber || !isoCode) {
         throw new CustomError(responseMessage.auth.INVALID_PHONE_NUMBER, 422)
     }

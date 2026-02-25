@@ -8,6 +8,6 @@ router.route('/register').post(authenticationController.register)
 router.route('/registeration/confirm/:token').patch(authenticationController.confirmRegistration)
 
 router.route('/login').post(authenticationController.login)
-router.route('/logout').put(authenticate, authenticationController.logout)
+router.route('/logout').post(authenticate, authenticationController.logout)
 
 export default router

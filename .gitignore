@@ -6,4 +6,4 @@ dist
 .env.production
 .env.test
 
-logs/
+logs

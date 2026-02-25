@@ -65,25 +65,27 @@ export default {
             }
 
             const isLoggedIn = await loginService(payload)
+            const isDev =  config.ENV === EApplicationEnvironment.DEVELOPMENT
+
             if (isLoggedIn.success === true) {
                 //sending cookies
                 const DOMAIN = health.getDomain()
                 response
                     .cookie('accessToken', isLoggedIn.accessToken, {
-                        path: '/v1',
+                        path: isDev ? '/' : '/v1/',
                         domain: DOMAIN,
                         sameSite: 'strict',
                         maxAge: 1000 * config.TOKENS.ACCESS.EXPIRY,
                         httpOnly: true,
-                        secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
+                        secure: !isDev
                     })
                     .cookie('refreshToken', isLoggedIn.refreshToken, {
-                        path: '/v1',
+                        path: isDev ? '/' : '/v1/',
                         domain: DOMAIN,
                         sameSite: 'strict',
                         maxAge: 1000 * config.TOKENS.REFRESH.EXPIRY,
                         httpOnly: true,
-                        secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
+                        secure: !isDev
                     })
 
                 httpResponse(response, request, 200, responseMessage.auth.LOGIN_SUCCESSFUL, isLoggedIn)
@@ -107,23 +109,25 @@ export default {
             }
 
             const DOMAIN = health.getDomain()
+            const isDev =  config.ENV === EApplicationEnvironment.DEVELOPMENT
+
             //Clearing cookies
             response
                 .clearCookie('accessToken', {
-                    path: '/v1',
+                    path: isDev ? '/' : '/v1/',
                     domain: DOMAIN,
                     sameSite: 'strict',
                     maxAge: 1000 * config.TOKENS.ACCESS.EXPIRY,
                     httpOnly: true,
-                    secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
+                    secure: !isDev
                 })
                 .clearCookie('refreshToken', {
-                    path: '/v1',
+                    path: isDev ? '/' : '/v1/',
                     domain: DOMAIN,
                     sameSite: 'strict',
                     maxAge: 1000 * config.TOKENS.REFRESH.EXPIRY,
                     httpOnly: true,
-                    secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
+                    secure: !isDev
                 })
 
             httpResponse(response, request, 200, responseMessage.SUCCESS, null)
